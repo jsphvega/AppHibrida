@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<widget id="com.phonegap.pc2" version="1.0.1">
+	<name>PruebaConcepto2</name>
+	<description>
+		Aplicacion que se encarga de comprobar la funcionalidad en una app hibrida.
+	</description>
+	
+	<author email="dev@callback.apache.org" href="http://cordova.io">
+		Grupo Los Desalmados
+	</author>
+
+	<content src="index.html" />
+	<access origin="*" />
+</widget>
