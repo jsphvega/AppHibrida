@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<widget id="com.phonegap.pc2" version="1.0.1">
+<widget id="com.phonegap.pc2" version="2.0.1">
 	<name>PruebaConcepto2</name>
 	<description>
-		Aplicacion que se encarga de comprobar la funcionalidad en una app hibrida.
+		Aplicacion que se encarga de comprobar la funcionalidad en una app hibrida, utilizando recursos del movil con recursos de la web.
 	</description>
 	
 	<author email="dev@callback.apache.org" href="http://cordova.io">
