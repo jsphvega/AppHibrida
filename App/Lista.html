@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+     <title>Prueba de concepto #2</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     <link href="./layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
+     <style>
+          .thumb {
+            height: 300px;
+            border: 1px solid #000;
+            margin: 10px 5px 0 0;
+          }
+        </style>
+
+</head>
+
+<body id="top">
+     <div class="wrapper row0">
+          <div id="topbar" class="hoc clear">
+               <div class="fl_left">
+                    <ul>
+                         <li><i></i> Grupo los Desalmados</li>
+                         <li><i></i> Junio 2017</li>
+                    </ul>
+               </div>
+               <div class="fl_right">
+                    <ul>
+                         <li><a href="Main.html"><i class="fa fa-lg fa-home"></i></a></li>
+                         <li><a href="#">Lista</a></li>
+                    </ul>
+               </div>
+          </div>
+     </div>
+
+     <div class="wrapper row3">
+          <main class="hoc container clear"> 
+
+               <div class="content"> 
+                    <h2>Lista de Imágenes</h2>
+                    <div class="group btmspace-50 demo">
+                         <div class="container" id="PanelTexto"> </div>
+                    </div>
+               </div>
+          </main>
+     </div>
+
+     <div class="wrapper row5">
+          <div id="copyright" class="hoc clear"> 
+               <p class="fl_left">Copyright &copy; 2017 - Todos los derechos reservados </p>
+               <p class="fl_right">Grupo los Desalmados</p>
+          </div>
+     </div>
+
+     <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
+     <!-- JAVASCRIPTS -->
+     <script src="./layout/scripts/jquery.min.js"></script>
+     <script src="./layout/scripts/jquery.backtotop.js"></script>
+     <script src="./layout/scripts/jquery.mobilemenu.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script> 
+
+     <script>
+     // Initialize Firebase
+     	var config = {
+     		apiKey: "AIzaSyDqemAG3f2hoGjWW9R7Ztn-AIBQ_Y0vqjs",
+     		authDomain: "chat-68c9c.firebaseapp.com",
+     		databaseURL: "https://chat-68c9c.firebaseio.com",
+     		projectId: "chat-68c9c",
+     		storageBucket: "chat-68c9c.appspot.com",
+     		messagingSenderId: "1083526514232"
+     	};
+     	firebase.initializeApp(config);
+
+     	firebase.database().ref('historial').on('value',function(snapshot){
+     		document.getElementById("PanelTexto").innerHTML = "";
+     		snapshot.forEach(function(e){
+     			var element = e.val();
+     			var nombre = element.doc;
+     			var hora = element.hour;
+     			var fecha = element.date;
+     			InsertarDatos(nombre, hora, fecha)
+     		});
+     	}); 
+
+     	function InsertarDatos(nombre, hora, fecha) {
+     		document.getElementById("PanelTexto").innerHTML += 
+     		"<p><strong>Documento: " + nombre + "</strong>  -- > Fecha Registrada: "+ fecha + ", " + hora + "</p>";
+ 		}
+	</script>
+</body>
+</html>
